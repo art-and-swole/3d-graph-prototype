@@ -1,63 +1,25 @@
 import {fetchData} from './data.js'
+import {Node} from './nodes.js'
+import {showHud} from './hud.js'
 
 let camera
 let scene
 let renderer
 let controls
-
+let raycaster
 let geometry
 let group
 
-let objects = []
+let mouse = new THREE.Vector2()
+let INTERSECTED
+let DRAGGING = false
 
+let draggableNodes = []
 let nodes = []
 let edges = []
-var frustumSize = 100;
+let frustumSize = 210;
 
 
-const getInitialNodePosition = (node) => {
-  if(node.lat !== null && node.lng !== null && node.alt !== null){
-    return {x: node.lat, y: node.lng, z: node.alt, draggable: false}
-  }
-  return {x: (Math.random() * 100) - 100, y: (Math.random() * 100) - 100, z: Math.random() * 50, draggable: true}
-}
-
-class Node {
-  constructor(_node){
-    this.properties = _node
-    // @todo refactor position away, as we will use only mesh position
-    this.position = getInitialNodePosition(_node)
-    this.draggable = this.position.draggable
-    this.redraw = true
-
-    const material = new THREE.MeshBasicMaterial({ wireframe: true, color: Math.random() * 0xffffff })
-    const geometry = new THREE.BoxBufferGeometry(5, 5, 5)
-
-    this.group = new THREE.Group()
-    this.mesh = new THREE.Mesh( geometry, material )
-    this.mesh.position.x = this.position.x
-    this.mesh.position.y = this.position.y
-    this.mesh.position.z = this.position.z
-    this.group.add(this.mesh)
-    if(this.draggable) objects.push(this.mesh)
-    this.uuid = this.mesh.uuid
-
-
-  }
-
-  getSourceLinkPosition(){
-    return this.mesh.position
-  }
-
-  getTargetLinkPosition(){
-    // const x = this.position.x + 10
-    // const y = this.position.y + 10
-    // const z = this.position.z + 10
-    // return {x,y,z}
-    return this.mesh.position
-  }
-
-}
 
 class Edge {
   constructor(_edge){
@@ -66,10 +28,31 @@ class Edge {
     const sourcePosition = nodes.filter(n => n.properties.id === this.source)[0].getSourceLinkPosition()
     const targetPosition = nodes.filter(n => n.properties.id === this.target)[0].getTargetLinkPosition()
     this.geometry = new THREE.BufferGeometry().setFromPoints([sourcePosition, targetPosition])
-    const line = new THREE.Line(this.geometry, new THREE.LineBasicMaterial({
-      color:0xffffff, opacity: 0.5}))
+    this.material = new THREE.LineBasicMaterial({})
+
+    this.material.color = {r:0.5, g:0.5, b:0.5}
+
+    const line = new THREE.Line(this.geometry, this.material)
 
     this.mesh = line
+
+    this.uuid = this.mesh.uuid
+  }
+
+  highlight(){
+    this.material.color = {r:1, g:0, b:1}
+  }
+
+  unHighlight(){
+    this.material.color = {r:0.5, g:0.5, b:0.5}
+  }
+
+  click(){
+
+  }
+
+  resetState(){
+
   }
 
   updateEdge (){
@@ -84,9 +67,11 @@ const addEdgeToScene = (edge) => {
   scene.add(edges[edges.length - 1].mesh)
 }
 
-const addNodeToScene = (node) => {
-  nodes.push(new Node(node))
-  scene.add(nodes[nodes.length - 1].mesh)
+const addNodeToScene = (_node) => {
+  const node = new Node(_node)
+  nodes.push(node)
+  scene.add(node.mesh)
+  if(node.draggable) draggableNodes.push(node.mesh)
 }
 
 const init = () => {
@@ -95,26 +80,24 @@ const init = () => {
   camera.position.z = 100
 
   scene = new THREE.Scene()
-  scene.background = new THREE.Color( 0x000000)
+  scene.background = new THREE.Color( 0xffffff)
 
   renderer = new THREE.WebGLRenderer({antialias: true})
   renderer.setPixelRatio( window.devicePixelRatio)
   renderer.setSize( window.innerWidth, window.innerHeight)
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFShadowMap;
-
+  renderer.domElement.classList.add('viz')
   document.body.appendChild( renderer.domElement)
 
   controls = new THREE.TrackballControls( camera );
   //controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
-
+  console.log(controls)
   controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
   controls.dampingFactor = 0.5
   controls.autoRotate = true
   controls.screenSpacePanning = false
   controls.minDistance = 100
   controls.maxDistance = 500
-  controls.maxPolarAngle = Math.PI / 2
+  controls.maxPolarAngle = 0
 
   window.addEventListener('resize', onWindowResize, false)
 
@@ -143,13 +126,13 @@ const init = () => {
     data.edges.forEach(e => addEdgeToScene(e))
   })
 
-
-
-  var dragControls = new THREE.DragControls( objects, camera, renderer.domElement );
+  const dragControls = new THREE.DragControls( draggableNodes, camera, renderer.domElement );
   dragControls.addEventListener( 'dragstart', function ( event ) {
+    DRAGGING = true
     controls.enabled = false; } );
   dragControls.addEventListener('drag', function(event){
-    const draggedNodeId = nodes.filter(n => n.uuid === event.object.uuid)[0].properties.id
+    const draggedNode = nodes.filter(n => n.uuid === event.object.uuid)[0]
+    const draggedNodeId = draggedNode.properties.id
     const updatedEdges = edges.filter(e => {
       return e.source === draggedNodeId || e.target === draggedNodeId
     })
@@ -157,9 +140,88 @@ const init = () => {
 
   })
   dragControls.addEventListener( 'dragend', function ( event ) {
+    DRAGGING = false
     controls.enabled = true;
   } );
 
+  raycaster = new THREE.Raycaster();
+
+  document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+  document.addEventListener('click', onDocumentMouseClick, false)
+}
+
+function onDocumentMouseMove( event ) {
+  event.preventDefault()
+  mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1
+  mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1
+}
+
+const getObjectByUUID = (uuid) => {
+  let obj = nodes.filter(n => n.uuid === uuid)[0]
+  if(obj === undefined){
+    obj = edges.filter(e => e.uuid === uuid)[0]
+    if(obj === undefined){
+      console.warn("UUID NOT FOUND. THIS SHOULD NOT HAPPEN")
+      return
+    }
+    obj.type = "EDGE"
+  } else {
+    obj.type = "NODE"
+  }
+  return obj
+}
+
+const getConnectedNodes = (id) => {
+  const sourceEdges = edges.filter(e => e.source === id)
+  const targetEdges = edges.filter(e => e.target === id)
+  let connectedNodes = []
+  sourceEdges.forEach(s => {
+    if(connectedNodes.filter(cn => cn.id === s.target).length > 0) return
+    connectedNodes.push(nodes.filter(n => n.properties.id === s.target)[0].properties)
+  })
+  targetEdges.forEach(t => {
+    if(connectedNodes.filter(cn => cn.id === t.source).length > 0) return
+
+    connectedNodes.push(nodes.filter(n => n.properties.id === t.source)[0].properties)
+  })
+  return connectedNodes
+}
+
+let selectedObject = {}
+
+const showHudFromId = (id) => {
+  let obj = nodes.filter(n => n.properties.id === id)[0]
+  obj.type = "NODE"
+  console.log("SHOW HUD FROM ID:", id, obj)
+  showHudFromObject(obj)
+}
+
+const showHudFromObject = (obj) => {
+  if(obj.type === "NODE"){
+    showHud(obj.properties, getConnectedNodes(obj.properties.id), showHudFromId)
+  } else {
+    console.log("EDGES NOT IMPLEMENTED YET ")
+  }
+}
+
+function onDocumentMouseClick (event ){
+  event.preventDefault()
+  if(DRAGGING) return
+
+  mouse.x = (event.clientX / window.innerWidth) * 2 -1
+  mouse.y = (event.clientY / window.innerHeight) * 2 + 1
+
+  let intersects = raycaster.intersectObjects( scene.children )
+
+  if(intersects.length > 0){
+    selectedObject = getObjectByUUID(intersects[0].object.uuid)
+    if(selectedObject.type === "NODE"){
+      showHudFromObject(selectedObject)
+    } else {
+      console.log("SELECTED EDGE:", selectedObject)
+    }
+
+  }
 
 }
 
@@ -172,8 +234,22 @@ const onWindowResize = () => {
   renderer.setSize( window.innerWidth, window.innerHeight)
 }
 
+let hoveredObject = {}
+
+const detectHoveredObjects = () => {
+  raycaster.setFromCamera( mouse, camera );
+  let intersects = raycaster.intersectObjects( scene.children )
+  if(intersects.length > 0){
+    console.log(hoveredObject)
+    if(hoveredObject.unHighlight) hoveredObject.unHighlight()
+    hoveredObject = getObjectByUUID(intersects[0].object.uuid)
+    hoveredObject.highlight()
+  }
+}
+
 const render = () => {
   controls.update()
+  detectHoveredObjects()
   renderer.render( scene, camera)
 
 }

@@ -1,6 +1,6 @@
 
 body {
-  color: rgb(20,20,20);
+  color: rgb(255,255,255);
   background-color: rgb(255,255,255);
   font-family: monospace;
   font-size: 10pt;
@@ -10,13 +10,14 @@ body {
   overflow: hidden;
 }
 
-.scene-tooltip {
-  font-size: 8pt;
-  font-family: monospace;
-  width: 30vw;
-  height: 30vh;
-  overflow-x: hidden;
-  overflow-y: auto;
+.viz {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index:-1;
+  left: 0px;
+  top: 0px;
 }
 
 .hud {

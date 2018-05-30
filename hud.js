@@ -3,11 +3,10 @@ const hud = document.getElementById('hud')
 const hudContent = document.getElementById('hud-content')
 const closeHud = document.getElementById('close-hud')
 
-export const showHud = node => {
-  const edges = getEdges(node.id).map(edge => {
+export const showHud = (node, _edges, callback) => {
+  const edges = _edges.map(edge => {
     return `<li class="edges" id="${edge.id}">${edge.id}</li>`
   }).join('')
-
 
   hudContent.innerHTML = `<h1>${node.name ? node.name : node.title}</h1>
     <section class="summary"><p>${marked(node.summary)}</p></section>
@@ -17,7 +16,7 @@ export const showHud = node => {
   const possibleEdges = document.getElementsByClassName("edges")
   for (var i = possibleEdges.length - 1; i >= 0; i--) {
     possibleEdges[i].addEventListener('click', function(e){
-      showHud(getNodeById(e.target.id))
+      showHud(callback(e.target.id))
     })
   }
 
