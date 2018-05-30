@@ -37,6 +37,17 @@ body {
 
 }
 
+.label {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1000;
+  background-color: black;
+  font-size: 10pt;
+  color: white;
+
+}
+
 .close-hud {
   position: absolute;
   width: 15pt;

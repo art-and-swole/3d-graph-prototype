@@ -2,16 +2,13 @@ const getInitialNodePosition = (node) => {
   if(node.lat !== null && node.lng !== null && node.alt !== null){
     return {x: node.lat, y: node.lng, z: node.alt, draggable: false}
   }
-  return {x: (Math.random() * 150) - 150, y: (Math.random() * 150) - 150, z: Math.random() * 50, draggable: true}
+  return {x: (Math.random() * 200) - 100, y: (Math.random() * 200)-100, z: node.level * 20, draggable: true}
 }
-
-
 
 export class Node {
   constructor(_node){
 
-    const spriteMap = new THREE.TextureLoader().load( 'test.png' );
-
+    const spriteMap = new THREE.TextureLoader().load( 'sprite.png' );
     this.state = "NONE"
     this.color = {r:0,g:0,b:0}
     this.properties = _node
@@ -19,30 +16,27 @@ export class Node {
     this.position = getInitialNodePosition(_node)
     this.draggable = this.position.draggable
     this.redraw = true
-
     // this.material = new THREE.MeshBasicMaterial({ wireframe: true })
     // this.material.color = this.color
     // this.geometry = new THREE.BoxBufferGeometry(10, 10, 10)
-
     this.material = new THREE.SpriteMaterial({
       map: spriteMap,
-      color: '#fff'
+      color: '#fff',
     })
     this.sprite = new THREE.Sprite(this.material)
-    this.sprite.scale.set(20, 20, 1)
-
-
+    this.sprite.scale.set(10, 10, 1)
     this.group = new THREE.Group()
     this.sprite.position.x = this.position.x
     this.sprite.position.y = this.position.y
     this.sprite.position.z = this.position.z
     this.group.add(this.sprite)
     this.uuid = this.sprite.uuid
-
     this.mesh = this.sprite
   }
 
-
+  markAsRead(){
+    this.updateState("READ")
+  }
 
   updateState(newState){
     this.state = newState
@@ -55,6 +49,9 @@ export class Node {
         break
       case("NONE"):
         this.material.color = this.color
+        break
+      case("READ"):
+        this.material.opacity = 0.3
         break
       default:
         this.material.color = this.color

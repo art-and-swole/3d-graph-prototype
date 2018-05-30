@@ -1,4 +1,4 @@
-
+import { reenableControls } from './script.js'
 const hud = document.getElementById('hud')
 const hudContent = document.getElementById('hud-content')
 const closeHud = document.getElementById('close-hud')
@@ -26,6 +26,7 @@ export const showHud = (node, _edges, callback) => {
 
 const hideHud = () => {
   hud.classList.remove('visible')
+  reenableControls()
 }
 
 closeHud.addEventListener('click', hideHud)

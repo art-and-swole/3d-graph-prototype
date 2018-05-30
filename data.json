@@ -310,555 +310,185 @@
       "target": "termite-and-white-elephant-art",
       "type": "REFERENCES"
     },
-    {
-      "source": "container-san-souci",
-      "target": "thinkpad-x200t",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "thinkpad-x200t",
       "target": "emotional-brand-labor",
       "type": "SUBVERSION_OF"
     },
-    {
-      "source": "container-san-souci",
-      "target": "d3-travelers-bag",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "d3-travelers-bag",
       "target": "dyneema",
       "type": "MADE_FROM"
     },
-    {
-      "source": "container-san-souci",
-      "target": "d3-travelers-bag",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "d3-travelers-bag",
       "target": "gibsonian-aesthethic",
       "type": "REPRESENTS"
     },
-    {
-      "source": "container-san-souci",
-      "target": "d3-travelers-bag",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "d3-travelers-bag",
       "target": "emotional-brand-labor",
       "type": "REFERENCES"
     },
-    {
-      "source": "container-san-souci",
-      "target": "outlier-ultrahigh-backpack",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "outlier-ultrahigh-backpack",
       "target": "outlier-clothing",
       "type": "MADE_BY"
     },
-    {
-      "source": "container-san-souci",
-      "target": "outlier-ultrahigh-backpack",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "outlier-ultrahigh-backpack",
       "target": "dyneema",
       "type": "MADE_FROM"
     },
-    {
-      "source": "container-san-souci",
-      "target": "outlier-shirts-and-pants",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "outlier-shirts-and-pants",
       "target": "outlier-clothing",
       "type": "MADE_BY"
     },
-    {
-      "source": "container-san-souci",
-      "target": "antisthenes-gear-for-shipwrecks",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "antisthenes-gear-for-shipwrecks",
       "target": "luxuries-i-can-carry",
       "type": "APPLICATION_OF"
     },
-    {
-      "source": "container-san-souci",
-      "target": "antisthenes-gear-for-shipwrecks",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "antisthenes-gear-for-shipwrecks",
       "target": "montaigne-on-solitude",
       "type": "QUOTATION_FROM"
     },
-    {
-      "source": "container-san-souci",
-      "target": "gear-check-may-2018",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "gear-check-may-2018",
       "target": "white-70s-style-converse-hightops",
       "type": "CONTAINS"
     },
-    {
-      "source": "container-san-souci",
-      "target": "gear-check-may-2018",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "gear-check-may-2018",
       "target": "weiss-field-watch",
       "type": "CONTAINS"
     },
-    {
-      "source": "container-san-souci",
-      "target": "gear-check-may-2018",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "gear-check-may-2018",
       "target": "thinkpad-x200t",
       "type": "CONTAINS"
     },
-    {
-      "source": "container-san-souci",
-      "target": "gear-check-may-2018",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "gear-check-may-2018",
       "target": "outlier-ultrahigh-backpack",
       "type": "CONTAINS"
     },
-    {
-      "source": "container-san-souci",
-      "target": "gear-check-may-2018",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "gear-check-may-2018",
       "target": "outlier-shirts-and-pants",
       "type": "CONTAINS"
     },
-    {
-      "source": "container-san-souci",
-      "target": "gear-check-may-2018",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "gear-check-may-2018",
       "target": "matsuda-t-ti-sunglasses",
       "type": "CONTAINS"
     },
-    {
-      "source": "container-san-souci",
-      "target": "gear-check-may-2018",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "gear-check-may-2018",
       "target": "handbook-sketchbooks",
       "type": "CONTAINS"
     },
-    {
-      "source": "container-san-souci",
-      "target": "gear-check-may-2018",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "gear-check-may-2018",
       "target": "graphgear-mechanical-pencils",
       "type": "CONTAINS"
     },
-    {
-      "source": "container-san-souci",
-      "target": "gear-check-may-2018",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "gear-check-may-2018",
       "target": "d3-travelers-bag",
       "type": "CONTAINS"
     },
-    {
-      "source": "container-san-souci",
-      "target": "gear-check-may-2018",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "gear-check-may-2018",
       "target": "antisthenes-gear-for-shipwrecks",
       "type": "BASED_ON"
     },
-    {
-      "source": "container-san-souci",
-      "target": "gear-check-may-2018",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "gear-check-may-2018",
       "target": "phyle",
       "type": "REFERENCES"
     },
-    {
-      "source": "container-san-souci",
-      "target": "termite-philosophy",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "termite-philosophy",
       "target": "tooth-puller",
       "type": "REFERENCES"
     },
-    {
-      "source": "container-san-souci",
-      "target": "termite-philosophy",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "termite-philosophy",
       "target": "stunt-philosopher",
       "type": "DESCRIBES"
     },
-    {
-      "source": "container-san-souci",
-      "target": "termite-philosophy",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "termite-philosophy",
       "target": "termite-and-white-elephant-art",
       "type": "REFERENCES"
     },
-    {
-      "source": "container-san-souci",
-      "target": "domi-militisque",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "domi-militisque",
       "target": "gear-check-may-2018",
       "type": "CONTAINS"
     },
-    {
-      "source": "container-san-souci",
-      "target": "domi-militisque",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "domi-militisque",
       "target": "the-engineer-mindset",
       "type": "REFERENCES"
     },
-    {
-      "source": "container-san-souci",
-      "target": "domi-militisque",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "domi-militisque",
       "target": "the-bowie-kierkegaard-thing",
       "type": "REFERENCES"
     },
-    {
-      "source": "container-san-souci",
-      "target": "domi-militisque",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "domi-militisque",
       "target": "termite-philosophy",
       "type": "REFERENCES"
     },
-    {
-      "source": "container-san-souci",
-      "target": "the-designers-mindset",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "the-designers-mindset",
       "target": "aphantasia",
       "type": "REFERENCES"
     },
-    {
-      "source": "container-san-souci",
-      "target": "the-designers-mindset",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "the-designers-mindset",
       "target": "the-illustrators-mindset",
       "type": "REFERENCES"
     },
-    {
-      "source": "container-san-souci",
-      "target": "stunt-philosopher",
-      "type": "HAS_CHILD"
-    },
+
     {
       "source": "stunt-philosopher",
       "target": "termite-philosophy",
       "type": "REFERENCES"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "handbook-sketchbooks",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "thinkpad-x200t",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "white-70s-style-converse-hightops",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "d3-travelers-bag",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "outlier-ultrahigh-backpack",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "outlier-shirts-and-pants",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "antisthenes-gear-for-shipwrecks",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "gear-check-may-2018",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "weiss-field-watch",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "outlier-clothing",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "dyneema",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "graphgear-mechanical-pencils",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "luxuries-i-can-carry",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "matsuda-t-ti-sunglasses",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "termite-philosophy",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "domi-militisque",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "the-engineer-mindset",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "san-souci-technical-notes",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "the-designers-mindset",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "the-artists-mindset",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "termite-and-white-elephant-art",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "stunt-philosopher",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "the-bowie-kierkegaard-thing",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "container-san-souci",
-      "type": "HAS_CHILD"
-    },
-    {
-      "source": "container-san-souci",
-      "target": "the-illustrators-mindset",
-      "type": "HAS_CHILD"
     }
   ],
   "nodes": {
@@ -899,16 +529,7 @@
       "summary": "A man who saw the shape of the new world",
       "title": "Michelangelo Merisi da Caravaggio"
     },
-    "container-san-souci": {
-      "alt": null,
-      "content": "",
-      "labels": null,
-      "lat": null,
-      "lng": null,
-      "src": null,
-      "summary": "",
-      "title": "san-souci"
-    },
+
     "cyber-punk": {
       "alt": null,
       "content": "",

@@ -1,6 +1,7 @@
 import {fetchData} from './data.js'
 import {Node} from './nodes.js'
 import {showHud} from './hud.js'
+import {showLabel} from './label.js'
 
 let camera
 let scene
@@ -11,13 +12,16 @@ let geometry
 let group
 
 let mouse = new THREE.Vector2()
+let realMousePosition = new THREE.Vector2()
 let INTERSECTED
 let DRAGGING = false
+let ALLOWCLICK = true
 
 let draggableNodes = []
+let ignoredUUIDS = []
 let nodes = []
 let edges = []
-let frustumSize = 210;
+let frustumSize = 300;
 
 
 
@@ -25,6 +29,7 @@ class Edge {
   constructor(_edge){
     this.source = _edge.source
     this.target = _edge.target
+    this.type = _edge.type
     const sourcePosition = nodes.filter(n => n.properties.id === this.source)[0].getSourceLinkPosition()
     const targetPosition = nodes.filter(n => n.properties.id === this.target)[0].getTargetLinkPosition()
     this.geometry = new THREE.BufferGeometry().setFromPoints([sourcePosition, targetPosition])
@@ -76,8 +81,10 @@ const addNodeToScene = (_node) => {
 
 const init = () => {
   const aspect = window.innerWidth / window.innerHeight;
-  camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, 1, 2000 )
-  camera.position.z = 100
+  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
+  camera.position.z = 200
+  camera.position.y = -200
+  camera.lookAt({x:0,y:0,z:0})
 
   scene = new THREE.Scene()
   scene.background = new THREE.Color( 0xffffff)
@@ -90,7 +97,6 @@ const init = () => {
 
   controls = new THREE.TrackballControls( camera );
   //controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
-  console.log(controls)
   controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
   controls.dampingFactor = 0.5
   controls.autoRotate = true
@@ -116,15 +122,26 @@ const init = () => {
 
   scene.add( light );
 
-  fetchData().then(data => {
-    Object.keys(data.nodes).forEach(key => {
-      let newNode = data.nodes[key]
-      newNode.id = key
-      addNodeToScene(newNode)
-    })
+  var map = new THREE.TextureLoader().load( 'UV_Grid_Sm.jpg' );
+  map.wrapS = map.wrapT = THREE.RepeatWrapping;
+  map.anisotropy = 16;
 
+
+
+  var planeMaterial = new THREE.MeshPhongMaterial( { map: map, side: THREE.SingleSide } );
+  let plane = new THREE.Mesh( new THREE.PlaneBufferGeometry( 200, 200, 4, 4 ), planeMaterial );
+  plane.position.set( 0, 0, -10 );
+  scene.add( plane );
+
+  ignoredUUIDS.push(plane.uuid)
+
+  fetchData().then(data => {
+    data.nodes.forEach(n => {
+      addNodeToScene(n)
+    })
     data.edges.forEach(e => addEdgeToScene(e))
   })
+
 
   const dragControls = new THREE.DragControls( draggableNodes, camera, renderer.domElement );
   dragControls.addEventListener( 'dragstart', function ( event ) {
@@ -140,8 +157,8 @@ const init = () => {
 
   })
   dragControls.addEventListener( 'dragend', function ( event ) {
-    DRAGGING = false
-    controls.enabled = true;
+      DRAGGING = false
+      controls.enabled = true;
   } );
 
   raycaster = new THREE.Raycaster();
@@ -152,11 +169,14 @@ const init = () => {
 
 function onDocumentMouseMove( event ) {
   event.preventDefault()
+  realMousePosition.x = event.clientX
+  realMousePosition.y = event.clientY
   mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1
   mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1
 }
 
 const getObjectByUUID = (uuid) => {
+  console.log(uuid)
   let obj = nodes.filter(n => n.uuid === uuid)[0]
   if(obj === undefined){
     obj = edges.filter(e => e.uuid === uuid)[0]
@@ -164,10 +184,11 @@ const getObjectByUUID = (uuid) => {
       console.warn("UUID NOT FOUND. THIS SHOULD NOT HAPPEN")
       return
     }
-    obj.type = "EDGE"
+    obj.objtype = "EDGE"
   } else {
-    obj.type = "NODE"
+    obj.objtype = "NODE"
   }
+  console.log(obj)
   return obj
 }
 
@@ -191,22 +212,30 @@ let selectedObject = {}
 
 const showHudFromId = (id) => {
   let obj = nodes.filter(n => n.properties.id === id)[0]
-  obj.type = "NODE"
+  obj.objtype = "NODE"
   console.log("SHOW HUD FROM ID:", id, obj)
   showHudFromObject(obj)
 }
 
 const showHudFromObject = (obj) => {
-  if(obj.type === "NODE"){
+  controls.enabled = false
+  ALLOWCLICK = false
+  if(obj.objtype === "NODE"){
     showHud(obj.properties, getConnectedNodes(obj.properties.id), showHudFromId)
+    obj.markAsRead()
   } else {
     console.log("EDGES NOT IMPLEMENTED YET ")
   }
 }
 
+export const reenableControls = () => {
+  controls.enabled = true
+  ALLOWCLICK = true
+}
+
 function onDocumentMouseClick (event ){
+  if(DRAGGING || !ALLOWCLICK) return
   event.preventDefault()
-  if(DRAGGING) return
 
   mouse.x = (event.clientX / window.innerWidth) * 2 -1
   mouse.y = (event.clientY / window.innerHeight) * 2 + 1
@@ -215,7 +244,7 @@ function onDocumentMouseClick (event ){
 
   if(intersects.length > 0){
     selectedObject = getObjectByUUID(intersects[0].object.uuid)
-    if(selectedObject.type === "NODE"){
+    if(selectedObject.objtype === "NODE"){
       showHudFromObject(selectedObject)
     } else {
       console.log("SELECTED EDGE:", selectedObject)
@@ -236,19 +265,27 @@ const onWindowResize = () => {
 
 let hoveredObject = {}
 
+
 const detectHoveredObjects = () => {
   raycaster.setFromCamera( mouse, camera );
+
   let intersects = raycaster.intersectObjects( scene.children )
   if(intersects.length > 0){
-    console.log(hoveredObject)
-    if(hoveredObject.unHighlight) hoveredObject.unHighlight()
-    hoveredObject = getObjectByUUID(intersects[0].object.uuid)
-    hoveredObject.highlight()
+    let UUID = intersects[0].object.uuid
+    let iterator = 1
+    while(ignoredUUIDS.indexOf(UUID) > -1 && iterator < intersects.length ){
+      UUID = intersects[iterator].object.uuid
+      iterator++
+    }
+
+    if(hoveredObject && hoveredObject.unHighlight) hoveredObject.unHighlight()
+    hoveredObject = getObjectByUUID(UUID)
+    if(hoveredObject && hoveredObject.unHighlight) hoveredObject.highlight()
+    if(hoveredObject !== undefined) showLabel(hoveredObject, realMousePosition)
   }
 }
 
 const render = () => {
-  controls.update()
   detectHoveredObjects()
   renderer.render( scene, camera)
 
@@ -256,7 +293,7 @@ const render = () => {
 
 const animate = () => {
   requestAnimationFrame( animate)
-
+  controls.update()
   render()
 }
 
