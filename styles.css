@@ -1,0 +1,69 @@
+
+body {
+  color: rgb(20,20,20);
+  background-color: rgb(255,255,255);
+  font-family: monospace;
+  font-size: 10pt;
+  overflow: hidden;
+  height: 100%;
+  width: 2000pt;
+  overflow: hidden;
+}
+
+.scene-tooltip {
+  font-size: 8pt;
+  font-family: monospace;
+  width: 30vw;
+  height: 30vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.hud {
+  position: absolute;
+  z-index: 10000;
+  left: -120vw;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  transition: left 0.2s ease-out;
+  background-color: rgba(255,255,255,0.9);
+}
+
+.hud.visible {
+  left: 0;
+  display: flex;
+
+}
+
+.close-hud {
+  position: absolute;
+  width: 15pt;
+  font-size: 15pt;
+  height: 22pt;
+  cursor: pointer;
+  left: 0px;
+  top: 0px;
+}
+
+.content-hud {
+  font-size: 10pt;
+  line-height: 18pt;
+  color: rgb(20,20,20);
+  height: 100%;
+  overflow-y: auto;
+
+}
+
+.content-hud p {
+  margin-bottom: 10pt;
+}
+
+.canvas-container {
+  position: absolute;
+  z-index: 0;
+}
+
+.canvas-container canvas {
+  z-index: 8;
+}

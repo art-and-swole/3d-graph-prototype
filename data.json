@@ -1,0 +1,1297 @@
+{
+  "edges": [
+    {
+      "source": "d3-travelers-bag",
+      "target": "gibsonian-aesthethic",
+      "type": "REPRESENTS"
+    },
+    {
+      "source": "gibsonian-aesthethic",
+      "target": "william-gibson",
+      "type": "REFERENCE_TO"
+    },
+    {
+      "source": "d3-travelers-bag",
+      "target": "gibsonian-aesthethic",
+      "type": "REPRESENTS"
+    },
+    {
+      "source": "gibsonian-aesthethic",
+      "target": "cyber-punk",
+      "type": "SUBSET_OF"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "thinkpad-x200t",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "thinkpad-x200t",
+      "target": "emotional-brand-labor",
+      "type": "SUBVERSION_OF"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "outlier-ultrahigh-backpack",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "outlier-ultrahigh-backpack",
+      "target": "outlier-clothing",
+      "type": "MADE_BY"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "outlier-ultrahigh-backpack",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "outlier-ultrahigh-backpack",
+      "target": "dyneema",
+      "type": "MADE_FROM"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "outlier-shirts-and-pants",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "outlier-shirts-and-pants",
+      "target": "outlier-clothing",
+      "type": "MADE_BY"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "d3-travelers-bag",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "d3-travelers-bag",
+      "target": "dyneema",
+      "type": "MADE_FROM"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "d3-travelers-bag",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "d3-travelers-bag",
+      "target": "gibsonian-aesthethic",
+      "type": "REPRESENTS"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "d3-travelers-bag",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "d3-travelers-bag",
+      "target": "emotional-brand-labor",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "antisthenes-gear-for-shipwrecks",
+      "type": "BASED_ON"
+    },
+    {
+      "source": "antisthenes-gear-for-shipwrecks",
+      "target": "luxuries-i-can-carry",
+      "type": "APPLICATION_OF"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "antisthenes-gear-for-shipwrecks",
+      "type": "BASED_ON"
+    },
+    {
+      "source": "antisthenes-gear-for-shipwrecks",
+      "target": "montaigne-on-solitude",
+      "type": "QUOTATION_FROM"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "phyle",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "phyle",
+      "target": "neal-stephenson",
+      "type": "AUTHORED_BY"
+    },
+    {
+      "source": "termite-philosophy",
+      "target": "tooth-puller",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "tooth-puller",
+      "target": "caravaggio",
+      "type": "AUTHORED_BY"
+    },
+    {
+      "source": "termite-philosophy",
+      "target": "stunt-philosopher",
+      "type": "DESCRIBES"
+    },
+    {
+      "source": "stunt-philosopher",
+      "target": "termite-philosophy",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "gear-check-may-2018",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "white-70s-style-converse-hightops",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "gear-check-may-2018",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "weiss-field-watch",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "gear-check-may-2018",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "thinkpad-x200t",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "gear-check-may-2018",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "outlier-ultrahigh-backpack",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "gear-check-may-2018",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "outlier-shirts-and-pants",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "gear-check-may-2018",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "matsuda-t-ti-sunglasses",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "gear-check-may-2018",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "handbook-sketchbooks",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "gear-check-may-2018",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "graphgear-mechanical-pencils",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "gear-check-may-2018",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "d3-travelers-bag",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "gear-check-may-2018",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "antisthenes-gear-for-shipwrecks",
+      "type": "BASED_ON"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "gear-check-may-2018",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "phyle",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "termite-philosophy",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "termite-philosophy",
+      "target": "tooth-puller",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "termite-philosophy",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "termite-philosophy",
+      "target": "stunt-philosopher",
+      "type": "DESCRIBES"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "termite-philosophy",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "termite-philosophy",
+      "target": "termite-and-white-elephant-art",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "stunt-philosopher",
+      "target": "termite-philosophy",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "termite-philosophy",
+      "target": "tooth-puller",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "stunt-philosopher",
+      "target": "termite-philosophy",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "termite-philosophy",
+      "target": "stunt-philosopher",
+      "type": "DESCRIBES"
+    },
+    {
+      "source": "stunt-philosopher",
+      "target": "termite-philosophy",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "termite-philosophy",
+      "target": "termite-and-white-elephant-art",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "thinkpad-x200t",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "thinkpad-x200t",
+      "target": "emotional-brand-labor",
+      "type": "SUBVERSION_OF"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "d3-travelers-bag",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "d3-travelers-bag",
+      "target": "dyneema",
+      "type": "MADE_FROM"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "d3-travelers-bag",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "d3-travelers-bag",
+      "target": "gibsonian-aesthethic",
+      "type": "REPRESENTS"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "d3-travelers-bag",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "d3-travelers-bag",
+      "target": "emotional-brand-labor",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "outlier-ultrahigh-backpack",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "outlier-ultrahigh-backpack",
+      "target": "outlier-clothing",
+      "type": "MADE_BY"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "outlier-ultrahigh-backpack",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "outlier-ultrahigh-backpack",
+      "target": "dyneema",
+      "type": "MADE_FROM"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "outlier-shirts-and-pants",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "outlier-shirts-and-pants",
+      "target": "outlier-clothing",
+      "type": "MADE_BY"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "antisthenes-gear-for-shipwrecks",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "antisthenes-gear-for-shipwrecks",
+      "target": "luxuries-i-can-carry",
+      "type": "APPLICATION_OF"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "antisthenes-gear-for-shipwrecks",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "antisthenes-gear-for-shipwrecks",
+      "target": "montaigne-on-solitude",
+      "type": "QUOTATION_FROM"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "gear-check-may-2018",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "white-70s-style-converse-hightops",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "gear-check-may-2018",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "weiss-field-watch",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "gear-check-may-2018",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "thinkpad-x200t",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "gear-check-may-2018",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "outlier-ultrahigh-backpack",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "gear-check-may-2018",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "outlier-shirts-and-pants",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "gear-check-may-2018",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "matsuda-t-ti-sunglasses",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "gear-check-may-2018",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "handbook-sketchbooks",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "gear-check-may-2018",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "graphgear-mechanical-pencils",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "gear-check-may-2018",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "d3-travelers-bag",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "gear-check-may-2018",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "antisthenes-gear-for-shipwrecks",
+      "type": "BASED_ON"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "gear-check-may-2018",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "gear-check-may-2018",
+      "target": "phyle",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "termite-philosophy",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "termite-philosophy",
+      "target": "tooth-puller",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "termite-philosophy",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "termite-philosophy",
+      "target": "stunt-philosopher",
+      "type": "DESCRIBES"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "termite-philosophy",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "termite-philosophy",
+      "target": "termite-and-white-elephant-art",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "domi-militisque",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "gear-check-may-2018",
+      "type": "CONTAINS"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "domi-militisque",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "the-engineer-mindset",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "domi-militisque",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "the-bowie-kierkegaard-thing",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "domi-militisque",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "domi-militisque",
+      "target": "termite-philosophy",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "the-designers-mindset",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "the-designers-mindset",
+      "target": "aphantasia",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "the-designers-mindset",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "the-designers-mindset",
+      "target": "the-illustrators-mindset",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "stunt-philosopher",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "stunt-philosopher",
+      "target": "termite-philosophy",
+      "type": "REFERENCES"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "handbook-sketchbooks",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "thinkpad-x200t",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "white-70s-style-converse-hightops",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "d3-travelers-bag",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "outlier-ultrahigh-backpack",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "outlier-shirts-and-pants",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "antisthenes-gear-for-shipwrecks",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "gear-check-may-2018",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "weiss-field-watch",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "outlier-clothing",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "dyneema",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "graphgear-mechanical-pencils",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "luxuries-i-can-carry",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "matsuda-t-ti-sunglasses",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "termite-philosophy",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "domi-militisque",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "the-engineer-mindset",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "san-souci-technical-notes",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "the-designers-mindset",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "the-artists-mindset",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "termite-and-white-elephant-art",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "stunt-philosopher",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "the-bowie-kierkegaard-thing",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "container-san-souci",
+      "type": "HAS_CHILD"
+    },
+    {
+      "source": "container-san-souci",
+      "target": "the-illustrators-mindset",
+      "type": "HAS_CHILD"
+    }
+  ],
+  "nodes": {
+    "antisthenes-gear-for-shipwrecks": {
+      "alt": null,
+      "content": "\"The philosopher Antisthenes put the same thing amusingly when he said that a man ought to provide himself with unsinkable goods, which could float out of a shipwreck with him.\"",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "",
+      "title": "antisthenes-gear-for-shipwrecks"
+    },
+    "aphantasia": {
+      "alt": null,
+      "content": "",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "The inability to see visions",
+      "title": "Aphantasia"
+    },
+    "caravaggio": {
+      "alt": null,
+      "content": "Michelangelo Merisi da Caravaggio was an Italian painter active in Rome, Naples, Malta, and Sicily from the early 1590s to 1610. His paintings combine a realistic observation of the human state, both physical and emotional, with a dramatic use of lighting, and they had a formative influence on Baroque painting. (from Wikipedia)",
+      "labels": [
+        "person",
+        "painter"
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "A man who saw the shape of the new world",
+      "title": "Michelangelo Merisi da Caravaggio"
+    },
+    "container-san-souci": {
+      "alt": null,
+      "content": "",
+      "labels": null,
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "",
+      "title": "san-souci"
+    },
+    "cyber-punk": {
+      "alt": null,
+      "content": "",
+      "labels": [
+        "aesthethic",
+        "concept"
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "High tech low-life",
+      "title": "cyber-punk"
+    },
+    "d3-travelers-bag": {
+      "alt": null,
+      "content": "## D3 Traveler Bag\n\nThis bag has some of that spooky platonic solid magic. Every other bag wants you to do emotional labor for it -- they have their logos everywhere, you need to move from owner of the bag to \"brand ambassador\". You have to be seen carrying that Hirschel backback.\n\nThis bag is for, according to its advertising copy, moving large sums of money across borders. It is matte black. It looks cheap, but is made from dyneema. I don't know if it's all in my head, but just carrying the bag seems to make going through airport security smoother. I never get searched or have a problem when I'm carrying this bag. I leave the bag sitting out, and no one ever looks at it. It is a great slience in objects.",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "My duffel",
+      "title": "d3-travelers-bag"
+    },
+    "domi-militisque": {
+      "alt": null,
+      "content": "First, a warning: I'm letting my brain be weird in Germany. Seems like a good place for it.\n\nSecond: You'll have to forgive me: I'm absolutely not qualified to write like this. I am an idiot.\n\nI tell people I'm an idiot a lot, and people don't really believe me. Nor do they pay me like I'm an idiot. Plato loved this pose, right? I only know that I know nothing. It is, of course, a lie. But a useful one.",
+      "labels": [
+        "center"
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "Smile, you're traveling",
+      "title": "domi-militisque"
+    },
+    "dyneema": {
+      "alt": null,
+      "content": "A non-woven composite material, a kind of paper. Stronger than steel, but patchable like paper. An expensive fabric, but one I love.",
+      "labels": [
+        "material"
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "Of all the space age fabrics, my favorite",
+      "title": "dyneema"
+    },
+    "emotional-brand-labor": {
+      "alt": null,
+      "content": "I don't work for free. It is rare I wear something with an obvious logo.",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "The way brands get you to advertise, engage or otherwise help them out even though you get nothing from it",
+      "title": "emotional-brand-labor"
+    },
+    "gear-check-may-2018": {
+      "alt": null,
+      "content": "There is a certain cultural subset that I belong to (a phyle, perhaps?) that is in constant low-grade preparation for a sudden shift in the world. An unveiling. I don't like the word \"apocalypse\" because it's original meaning (an unveiling) is obscured by Hollywood Pyrotechnics and general woo woo.\n\nWe aren't preppers (that is to say, ultimately isolationist). People who have bug out bags, cash hidden around the house aren't really ready for the world to change, and are in fact stuck in that world. The prepper lives in the myth of the rugged individual, the single hero in every story.\n\nMy particular phyle, while I suppose leans toward the tactical, black, instead appreciate useability and durability in our clothing and tools. We want to look good when the shit hits the fan, because we're going to have work to do.\n\nThere are problems with Tacticool aesthethic, and at a certain point you move from functionality to trying too hard to look badass. It is hard to find that balance.",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "A detailed accounting of my travel gear, and my thinking behind it",
+      "title": "gear-check-may-2018"
+    },
+    "gibsonian-aesthethic": {
+      "alt": null,
+      "content": "",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "The aesthethic that orbits around author William Gibson. He doesn't necessarily generate this aesthethic, but I don't know what else to call it.",
+      "title": "gibsonian-aesthethic"
+    },
+    "graphgear-mechanical-pencils": {
+      "alt": 0,
+      "content": "## GraphGear 500 0.7 mechanical pencil with 2b lead / 2mm lead holder with HB\nI used to use the Staedlters, but they moved from metal to plastic and messed up the weight distribution of the pencils-- another instance of how modern manufacturing techniques have made life worse. These have the right balance, and the 2b lead is close to writing with pen but eraseable. For drawings I start with the HB pencil lead holder, and finish up with either the mechanical pencil or water colors depending on what I am trying to do.",
+      "labels": [
+        "object",
+        "tool"
+      ],
+      "lat": 30,
+      "lng": 30,
+      "src": null,
+      "summary": "GraphGear 500 0.7 mechanical pencil with 2b lead",
+      "title": "graphgear-mechanical-pencils"
+    },
+    "handbook-sketchbooks": {
+      "alt": 0,
+      "content": "## handbook 8 1/2 X 11 notebook\nSomething happened to Moleskine paper in the mid-2000's. It just went down hill suddenly and completely-- right when it's popularity exploded, I suppose. It is now too glossy, and doesn't hold up to the lightest of washes. Quite dismal. The handbook paper has just the right grit for drawing and writing, and it holds up to my normal abuses (collaging, heavy washes) admirably. I used to do the 5 1/2 x 8 notebooks, but have found that I like having the space in the larger notebooks.",
+      "labels": [
+        ""
+      ],
+      "lat": 30,
+      "lng": 50,
+      "src": null,
+      "summary": "",
+      "title": "handbook-sketchbooks"
+    },
+    "luxuries-i-can-carry": {
+      "alt": 0,
+      "content": "I have the general philosophy of only owning luxuries I can carry. I do own a few expensive things, but generally I carry these things with me at all times.",
+      "labels": [
+        ""
+      ],
+      "lat": 30,
+      "lng": 40,
+      "src": null,
+      "summary": "",
+      "title": "luxuries-i-can-carry"
+    },
+    "matsuda-t-ti-sunglasses": {
+      "alt": null,
+      "content": "## Matsuda T-Ti Sunglasses\n\nThere is a clerk at a fancy boutique in the arts district that reads me like an open book. He used the term Gibsonian to describe these sunglasses. That is all it takes to get me to spend $500, apparently. I probably shouldn't admit to this.\n\nThey are made from Titanium, and thus hey are light, they look good, I am terrified of breaking them.",
+      "labels": [
+        "object",
+        "clothing",
+        "tool",
+        "sunglasses"
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "",
+      "title": "matsuda-t-ti-sunglasses"
+    },
+    "montaigne-on-solitude": {
+      "alt": null,
+      "content": "\"... they think they have left their occupations behind when they have merely changed them.\" pg. 3\n\n\"Ambition, covetousness, irresolution, fear and desires do not abandon us just because we have changed our landscape.\"\n\n\"Socrates was told that some man had not been improved by travel. 'I am sure he was not,' he said. 'He went with himself!'\"\n\nquid terras alio calentes\nsole mutamus? patria quis exul\nSe quoque fugit?\n\n[trans: Why do we leave for lands warmed by a foreign sun? What fugitive from his own land can flee from himself?]\n\nHorace, Odes, II, xvi, 18-20\n\nMontaigne, 4\n\n\"That is why it is not enough to withdraw from the mob, not enough to go to another place: we have to withdraw from such attributes of the mob as are within us. It is our own self we have to isolate and take back into possession\"\n\nMontaigne, 5\n\n\"The philosopher Antisthenes put the same thing amusingly when he said that a man ought to provide himself with unsinkable goods, which could float out of a shipwreck with him.\"\n\nMontaigne, 6\n\n\"Certainly if he still has himself, a man of understanding has lost nothing\"\n\n\nin solis sis tibi turba locis\nTibullus, IV, xiii 12 (adapted)\n\nMontaigne 8",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "On being alone, and in movement",
+      "title": "montaigne-on-solitude"
+    },
+    "neal-stephenson": {
+      "alt": null,
+      "content": "",
+      "labels": [
+        "person",
+        "author"
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "American Science Fiction and Technology Writer. Author of Snow Crash",
+      "title": "Neal Stephenson"
+    },
+    "outlier-clothing": {
+      "alt": 0,
+      "content": "",
+      "labels": [
+        ""
+      ],
+      "lat": 50,
+      "lng": 0,
+      "src": null,
+      "summary": "Clothing company based in New York that specializes in Tacticool Office Casual clothing",
+      "title": "outlier-clothing"
+    },
+    "outlier-shirts-and-pants": {
+      "alt": 0,
+      "content": "## Outlier Shirts and Pants\nMost of my clothing is Outlier. I travel with a pair of black pants and a pair of navy ones. I have navy and black T-Shirts. They all look great after years of wearing them. For whatever reason I can't pull off all black-- it looks forced on me. So it is dark blue shirt with black pants or black shirt with navy pants for me.",
+      "labels": [
+        ""
+      ],
+      "lat": 0,
+      "lng": 10,
+      "src": null,
+      "summary": "Tacticool Office Casual wear",
+      "title": "outlier-shirts-and-pants"
+    },
+    "outlier-ultrahigh-backpack": {
+      "alt": null,
+      "content": "## Outlier UltraHigh Backpack\nThis is the bag I carry around day in and day out. Another Dyneema bag, it has developed that black wrinkly patina that Dyneema gets. I have patched it many times, and I personally think it only looks better as it has been lived in. There was a certain subset of Harvard preppies I heard about who preferred their clothes quite worn -- not ripped and pre distressed like the fashion plates wear today-- but as evidence of their clothings quality. I appreciate that particular aesthethic, and this bag demonstrates that.",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "Dyneema backpack",
+      "title": "outlier-ultrahigh-backpack"
+    },
+    "phyle": {
+      "alt": null,
+      "content": "Used by Neil Stephenson in the Diamond Age to reflect that post-scarcity crumbling of the sovreign geographic state and reorganization into human subgroups. Which is generally when I reference it.",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "Greek for Clan, Race, People",
+      "title": "phyle"
+    },
+    "san-souci-technical-notes": {
+      "alt": null,
+      "content": "### Tue 15 May 2018 05:07:58 AM CEST\n\n```bash\npython -m http.server\n```\n\n### Wed 16 May 2018 11:23:27 AM CEST\n\nMy initial sprite loader looked like this:\n\n\n```javascript\nconst spriteMap = new THREE.TextureLoader().load( 'test.png' );\n\nconst createNodeObject = (node, constraints = {xMin: -1, xMax: 1, yMin: -1, yMax: 1, zMin: -1, zMax:1}) => {\n  const material = new THREE.SpriteMaterial({\n    map: spriteMap,\n    color: '#fff'\n  })\n  const sprite = new THREE.Sprite(material)\n  sprite.scale.set(20, 20, 1)\n  return sprite\n\n}\n```\n\nI wanted sprites because they are always facing the user, which is useful for interfaces and the like.\n\nI was using [this force directed graph](https://github.com/vasturiano/3d-force-graph) at first, but decided it was too heavy for what I need, it also didn't provide a clear way to add some limitations to what I wanted to do. For instance, I think users should only be able to pan over the Y access for this particular visualization. I think the viewport should be isometric, not orthographic. I wanted the option to add GLSL shaders and filters. I honestly don't think it is particularily useful to let users drag nodes around a 3d visualization, especially with 2d screens. With VR/AR things might change, but I'm going to delay adding that functionality to this boiler plate for now. Instead, the nodes shold be filterable and sortable in a reasonable way.\n\nThe basics of the visualization portion of this project is a flat plane with the particular map (this may later be an extruded mesh surface), with location nodes links to particular portions of that map, and the other nodes connected to that location node in semi random order floating above / in front of that node.\n\n#### Neo4j notes\n\nI am trying to decide if I want to use the more standard D3 structure for nodes / edges or just use the standard NEO export.",
+      "labels": [
+        "notes",
+        "journal",
+        "text"
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "Notes I took while building the San Souci Project",
+      "title": "san-souci-technical-notes"
+    },
+    "stunt-philosopher": {
+      "alt": null,
+      "content": "Do you remember that Mel Brooks bit about the Stand Up Philosopher? I always liked that idea. I've never been a good theory guy-- my mind is nimble but not particularily deep. I'm not equipped to be a philosopher. For me, I need a practice, and that is the only way I function. I suffer from that particularly difficult insanity that requires my actions to have meaning and purpose. This, often, puts me at odds with the way of the world. It makes me really bad at school.\n\nIt's not that I get bored easily-- it's just that if I don't see an immediate application for something I want to keep moving. This makes having a job hard, but I manage as an engineer. There is a reason I take every fourth month off-- forcing my mind to do something that is fundamentally pointless to me is exhausting. I do it as little as possible.",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "I have decided the job I want is that of being a Stunt Philosopher.",
+      "title": "stunt-philosopher"
+    },
+    "termite-and-white-elephant-art": {
+      "alt": null,
+      "content": "",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "A great pose of an essay. Disowned by the writer in later years, but a useful lie",
+      "title": "termite-and-white-elephant-art"
+    },
+    "termite-philosophy": {
+      "alt": null,
+      "content": "Have you ever noticed how different countries have different types of heroes? My favorite dichotomy is the difference between American and British heroes. I love British TV, but I can't help but chuckle at the big conceit of all of their heroes: the hyper competent savant. Have you noticed this? James Bond, Doctor Who, Sherlock Holmes. Everything happens in this contained, beautiful world where the hero is always entirely in control of the situation and the hero is five steps ahead of everyone else. It's a fantasy of empire, right? The great civilizer, wiser than everyone else, superior but generous. Odessyus had parts of this, but he was, as *who was the latest translater of Homer*said: he was a shifty bastard. British heros aren't shifty, they are for the moral order, as understood by the British working class or whatever. I\n\nWho are America's quintissential heroes? I say: Axel Foley, John McClaine, Clint Eastwoods character in Fistful of Dollars. That is to say: the inspired amatuer, the unqualified bystander who wanders into situations with no clear plan, and then improvises his way through, talking shit the entire way.\n\nWhen I say I want to be a stunt philosopher I am saying I want to take a particularily American stab at these massive pohilosophical problems, to give an Axel Foley laugh and set a car on fire. I don't know if what I'm about to do is right, but hell, what's the next option?\n\nThis owes a lot to the art theory of [Termite Whit eelephant art]. I'm not here to win a philosophical argument with you, right? I'm here to chew the scenery, make some wise cracks and then move the plot along at a reasonable place.\n\nThat is to say: I am a termite thinker. I have nothing to tell you, I can only show you how I chew. or, better: a stunt philosopher.",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "We could be heroes",
+      "title": "termite-philosophy"
+    },
+    "the-artists-mindset": {
+      "alt": null,
+      "content": "I have a real opinion about drawing, and why I, even though my drawings are ugly",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "Maybe provacatuer mindset is the better term? Or the instigator's mindset? I am unsure.",
+      "title": "the-artists-mindset"
+    },
+    "the-bowie-kierkegaard-thing": {
+      "alt": null,
+      "content": "I've been thinking a lot about David Bowie lately. I call it the Bowie thing because calling it the Bowie-Kierkegaard, or just the Kierkegaard thing, makes me feel pretensious. You don't need to worry, as I have said repeatedly: I am woefully underqualified to write about this stuff. I have read a little Kierkegaard, but I can't for the life of me remember what he actually said, only how he said it.",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "That pose, that upfront lie that allows a thought to develop",
+      "title": "the-bowie-kierkegaard-thing"
+    },
+    "the-designers-mindset": {
+      "alt": null,
+      "content": "I remember a conversation I had with John Van Hammersveld years ago. We were talking about his work with Saul Bass in the 60's, and how Bass provided an aesthethic grounding to John's (then) avant garde technique with the use of spot colors and new printing techniques.\n\nI told him that I thought I, for all my engineering chops, was ultimately a designer. He said: \"that is really interesting of you to say, Lindsey, because everything that you do is just so fucking ugly.\"\n\nI must concede the point. I do not feel that my job of a designer is really done until something is so ugly it only functions. A good way to judge this is to make something uglier than it needs to be. If it is actively difficult to look at you are only left with how it moves and interacts with the user. I know the business guys only care about if their brand colors pop (because they suffer from aphantasia), but I'm looking for something else when I plan something.\n\nI shun prettiness, skeumorphism in my design. I try to understand the inner logic of what I'm trying to build, and let that dictate the function. This means I rarely look for the golden section.\n\nBut that is the core of the designer (as opposed to the decorator or illustrator or engineer mindset). A good design doesn't look like anything except itself. It is a an overview of a system, an interface.\n\nNeedless to say, I don't get hired as a designer, and every time I've tried to engage in that world it is disastrous.",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "Carefully planned, everything in order.",
+      "title": "the-designers-mindset"
+    },
+    "the-engineer-mindset": {
+      "alt": null,
+      "content": "A good example of this is the engineer's perspective: I have a large problem, so I break it up into small parts and solve each individual problem. This is a quite effective way of thinking. I get paid very well to think like this\n\nRemember that awful Matt Damon movie? Sorry, I need to narrow it down. Remember that awful Matt Damon movie where he's on Mars, and then survives and at the end gives that trite little speech about solving one problem after another? The whole movie follows that conceit, that engineering way of mind, and people like it because it's clever. But it's still bullshit. In the chaos of the universe Matt Damon would be dead on Mars, because fuck ups in that situation at those stakes are always deadly.\n\nAnd a lot of that particular frame of mind-- I have a large problem, I break it down into small problems and solve them-- produces massive problems itself. \"Second Order Effects\", \"Cobra Problems\". People have all sorts of interesting phrases to describe them. We are facing the big bad motherfucker of second order effects, the so-called anthropocene. We had a problem: we wanted stuff. So we solved all the little problems that had to do with making stuff. And we solved all of those little problems-- how to you make a cell phone? how do you move that cell phone from Senschen to Los Anglees to Demoines, Iowa? Meat tastes amazing, and so we solved the smaller problem of how to raise an industrial amount of cattle and put them through a system that spits it out at the grocery store so you never have to think about how to raise, feed, slaughter, divy up and package a cow yourself -- and then we forgot about how we were going to actually power the contraption. We missed the big problem-- that the world is mutable, and climate and resources are not static -- when we solved all the little ones. If you engineer on a team you see these sorts of problems cropping up all the time-- an engineer solves a problem, and hands it off to another engineer who solves another problem all down the line until the user does something you didn't think about and suddenly the server is crashing and your manager is calling you and you have no idea how you ended up in that situation.\n\nWilliam Gibson calls the coming thicket of calamity barreling down on us all \"the jackpot\". I like that term-- it describes how sudden and unbelievable that moment is.\n\nBut does that mean that frame of mind, that pose, is particularily bad? No. It's useful. How I'm writing this is an engineering perspective-- I can't help it, I spend a lot of my life breaking down big problems and solving the little ones bit by bit. I thought: I have this problem, this massive, confusing problem I'm trying to figure out, and I can only solve it by striking a pose. So I started writing this-- using graphs and machine learning and writing little snippets (even smaller attempts than Montaigne) -- by solving the small problems one by one.\n\nI'm not saying I'm not wrong, but I like to think I am wrong for the right reason",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "You have a big problem, you break that big problem up into small pieces and then solve each problem one at a time",
+      "title": "the-engineer-mindset"
+    },
+    "the-illustrators-mindset": {
+      "alt": null,
+      "content": "There is a way of drawing that everyone learns that is so completely wrong and damages peoples aeshethics and thinking processese so completely that I doubt there is any way to recover from. The mistake is this: that a drawing should reflect how something is and not how it looks.\n\nI see this a lot: a tree that looks like a tree does, a person that is in correct proportion (so many heads wide, their arms hanging at a specific place, etc). One only need to walk down the street to see how ridiculous this particular insanity of human proportion is. Human beings are creatures of spectacular variation, and every guideline and tick leads us not toward truth but toward a cultural null point, a negation of what is real. When you draw like this the Kardashians win.\n\nI spent a lot of years drawing people on the bus, and I have had several conversations with peoples whose second cousin Tony or whatever could draw Wolverine just like the comic books, and he's a good artist-- my stuff is terrible.\n\nThese \"artists\", who are wrong, develop a series of processese and ticks to generate images-- they cross hatch a certain way, they use a thicker marker on the edges, they have a series of tactics but no real process. Their images all look the same, they conform to an approved standard of what is good. They can process images, and give you a representation, but they can tell you nothing about how they actually see an image. They lie, but innefectively.\n\nIt's not just drawing. Art schools, with their dedication to justifying themselves in late capitalism, have become focus groups to generate an artist's brand. An expensive branding operation, though I've seen more expensive and futile. When an official artist leaves art school they have their thing: they put tape on plexiglass just so, the writhe on the discarded food of the gallery floor a specific way that has the official sanction of being art school and gallerist approved.\n\nMe and Goya are in agreement: this is all bullshit. Art is not a series of ticks and tactics, but a method of seeing. I fully concede my drawings are rarely beautiful. But I'm not trying to draw beautifully-- that is a distraction, the mistake everyone else is making. I'm trying to generate an expression of my process of seeing. I am trying to express the sensory experience of what I am drawing, Even if it comes from within my mind, the image does not exist yet when I am generating it. I have to perform a drawing, to parse how I perceive it in real time. k",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "The wrong way to draw that everyone likes",
+      "title": "the-illustrators-mindset"
+    },
+    "thinkpad-x200t": {
+      "alt": null,
+      "content": "## Thinkpad X200T (modified with LibreBoot ROM, 8gb RAM and 800gb SSD harddrive)\nI have sand-papered and enameled over all the logos on the laptop because I don't work for free.\n\nThe fact is is that laptop keyboards have gotten atrocious over the past decade, and the thinkpads from this era are the highest spec laptops I can find with a keyboard that isn't worthless. There are other laptops that have mechanical keyboards, but they are for gamers -- all tacky red angles, fake vents, and too large to comfortably haul around. I don't want toys in my life: I want tools. Perhaps it is just growing up in the 90's, but I need to feel the mechanical movement of keys to feel like I'm not spinning my wheels. I spend all day typing and so does most everyone else these days. I don't understand why you wouldn't want a satisfying sensory experience like clicking keys while you work.\n\nI run Ubuntu with i3wm. Everything has been highly customized at this point-- I doubt anyone else could figure out how to operate it with my custom keyboard macros. I rarely use the trackpoint. One thing I really like with this is that it is a tablet, but only with a stylus. As a left hander who smears when he writes, I can't use an ipad or a surface pro with a stylus-- my left palm gives the devices too much noise. With just the stylus interaction I can actually draw / use the stylus as intended and exactly, with my hand dragging across the screen.\n\nFor the most part I run Sublime Text 3, a few terminals and Google Chrome on this laptop. It is a dignified netbook, just as cheap but far sturdier. If I need to do something heavy I have a desktop computer that I can ssh into from anywhere.\n\nUsing it puts me into a focused frame of mind I don't get using an Apple or Windows machine. It says: \"I am here to work\", and I find this helps me keep focus.",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "My work laptop, my thinking machine",
+      "title": "thinkpad-x200t"
+    },
+    "tooth-puller": {
+      "alt": null,
+      "content": "<img src=\"https://lh6.googleusercontent.com/oUuA-Pl33YS7Fz-Su1SVF2aGBtzJ3pOyVrZFqurvPVkCb1l0UFvt4fyaHAQ2MgKbOPCdbGKT_fjfnjtVfiTx8wVpFdExENVN9BwddQ3BmqFjmXSQi4xRfsIN28iV95c\" height=\"200\" width=\"auto\" /><br><br>Year: <br>Seen: <br>title: Tooth Puller\n\nIt's important to note this painting is attributed to Caravaggio.\n\nI think it's one of his paintings because it is bad. Like, not a mediocre work of a genius (i.e., all of Rubens work that isn't at the Prado), but an actively bad painting that would (and should) have been thrown away had it not been painted by Caravaggio.\n\nIt is ugly, awkward and grotesque with no redeeming qualities whatsoever, and I think it's the key to Caravaggio's work. You see, I think it represents all of Caravaggio's weaknesses so well. Caravaggio painted the way he painted because he could not do otherwise. His entire practice was based on finding success built on his limited resources.\n\nAs I like to put it: you must chew through the world with your own teeth. They might be as rotten as the tooth getting pulled, but you still only have that.\n\nAs I fail at what I do I keep this in mind-- I can only think and write and make art in the way that I can, and I fully understand how bad at all this I actually am. But that doesn't stop me from chewing, even with these rotten teeth.",
+      "labels": [
+        "painting",
+        "image"
+      ],
+      "lat": null,
+      "lng": null,
+      "src": "https://lh6.googleusercontent.com/oUuA-Pl33YS7Fz-Su1SVF2aGBtzJ3pOyVrZFqurvPVkCb1l0UFvt4fyaHAQ2MgKbOPCdbGKT_fjfnjtVfiTx8wVpFdExENVN9BwddQ3BmqFjmXSQi4xRfsIN28iV95c",
+      "summary": "",
+      "title": "Tooth Puller"
+    },
+    "weiss-field-watch": {
+      "alt": null,
+      "content": "## Weiss Field Watch (#0671)\n\nMade in Los Angeles, except for the springs which had to be sourced from Switzerland. I bought this watch on the first anniversary of me quitting drinking. I had been thinking about this watch for years after meeting the watch maker at some fashion event in 2013. I have the green band and the white face.\n\nIt's a winder, and every morning I crank it 36 rotations and none further. To me it serves as a kind of bellwether: if I notice my watch has stopped it means I am losing my balance-- that other habits might be slipping, I might be missing something important, I might be a little overheated and need to slow down. It's better than any fitbit-- I actually pay attention to it. As a luxury it works as a totem of my success and balance I've worked hard to achieve in life.",
+      "labels": [
+        ""
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "Weiss Field Watch no. 0671",
+      "title": "weiss-field-watch"
+    },
+    "white-70s-style-converse-hightops": {
+      "alt": null,
+      "content": "## White 70's style Converse Hightops\nIn Los Angeles among the fashion avant-garde torn up white 70's style Converse sneakers are all the rage, and I can use them when I lift weights. So, those are the shoes I am currently travelling with. It doesn't matter what brand of sneakers I buy, I wear through them in a month.",
+      "labels": [
+        "object",
+        "clothing",
+        "shoes"
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "White 70's Style Converse Hightops",
+      "title": "white-70s-style-converse-hightops"
+    },
+    "william-gibson": {
+      "alt": null,
+      "content": "",
+      "labels": [
+        "person",
+        "author"
+      ],
+      "lat": null,
+      "lng": null,
+      "src": null,
+      "summary": "Author, aesthethe",
+      "title": "william-gibson"
+    }
+  }
+}
