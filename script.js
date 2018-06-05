@@ -87,13 +87,21 @@ const addFloor = () => {
 
   var planeMaterial = new THREE.MeshPhongMaterial( { map: map, side: THREE.DoubleSide } );
   let plane = new THREE.Mesh( new THREE.PlaneBufferGeometry( 200, 200, 4, 4 ), planeMaterial );
-  plane.position.set( 0, -60, 0 );
+  plane.position.set( 0, -10, 0 );
   plane.rotation.x = Math.PI / 2
   scene.add( plane );
   ignoredUUIDS.push(plane.uuid)
 
   window.planeadjust = plane
 
+}
+
+const addCamera = () => {
+  const aspect = window.innerWidth / window.innerHeight;
+  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
+  camera.position.z = 200
+  camera.lookAt({x:0,y:0,z:0})
+  window.cameraadjust = camera
 }
 
 const addLights = () => {
@@ -114,11 +122,8 @@ const addLights = () => {
 }
 
 const init = () => {
-  const aspect = window.innerWidth / window.innerHeight;
-  camera = new THREE.PerspectiveCamera( 35.264, window.innerWidth / window.innerHeight, 1, 500 );
-  camera.position.z = 100
-  camera.position.y = -200
-  camera.lookAt({x:0,y:0,z:0})
+
+  addCamera()
 
   scene = new THREE.Scene()
   scene.background = new THREE.Color( 0xffffff)

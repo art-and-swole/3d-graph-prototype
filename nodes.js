@@ -1,8 +1,8 @@
 const getInitialNodePosition = (node) => {
   if(node.lat !== null && node.lng !== null && node.alt !== null){
-    return {x: node.lat, y: node.lng, z: node.alt, draggable: false}
+    return {x: node.lat, y: node.alt, z: node.lng, draggable: false}
   }
-  return {x: (Math.random() * 200) - 100, y: (Math.random() * 200)-100, z: node.level * 20, draggable: true}
+  return {x: (Math.random() * 200) - 100, y: node.level * 20, z:  (Math.random() * 200) - 100, draggable: true}
 }
 
 export class Node {
