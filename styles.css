@@ -20,6 +20,10 @@ body {
   top: 0px;
 }
 
+.READ {
+  opacity: 0.4;
+}
+
 .hud {
   position: absolute;
   z-index: 10000;

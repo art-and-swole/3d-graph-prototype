@@ -1,7 +1,7 @@
 import {fetchData} from './data.js'
 import {Node} from './nodes.js'
 import {showHud} from './hud.js'
-import {showLabel} from './label.js'
+import {showLabel, hideLabel} from './label.js'
 
 let camera
 let scene
@@ -79,10 +79,44 @@ const addNodeToScene = (_node) => {
   if(node.draggable) draggableNodes.push(node.mesh)
 }
 
+const addFloor = () => {
+  // DRAW GROUND PLANE
+  var map = new THREE.TextureLoader().load( 'UV_Grid_Sm.jpg' );
+  map.wrapS = map.wrapT = THREE.RepeatWrapping;
+  map.anisotropy = 16;
+
+  var planeMaterial = new THREE.MeshPhongMaterial( { map: map, side: THREE.DoubleSide } );
+  let plane = new THREE.Mesh( new THREE.PlaneBufferGeometry( 200, 200, 4, 4 ), planeMaterial );
+  plane.position.set( 0, -60, 0 );
+  plane.rotation.x = Math.PI / 2
+  scene.add( plane );
+  ignoredUUIDS.push(plane.uuid)
+
+  window.planeadjust = plane
+
+}
+
+const addLights = () => {
+  scene.add( new THREE.AmbientLight( 0x505050 ) );
+
+  var light = new THREE.SpotLight( 0xffffff, 1.5 );
+  light.position.set( 0, 500, 2000 );
+  light.angle = Math.PI / 9;
+
+  light.castShadow = false;
+  light.shadow.camera.near = 1000;
+  light.shadow.camera.far = 4000;
+  light.shadow.mapSize.width = 1024;
+  light.shadow.mapSize.height = 1024;
+
+  scene.add( light );
+
+}
+
 const init = () => {
   const aspect = window.innerWidth / window.innerHeight;
-  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
-  camera.position.z = 200
+  camera = new THREE.PerspectiveCamera( 35.264, window.innerWidth / window.innerHeight, 1, 500 );
+  camera.position.z = 100
   camera.position.y = -200
   camera.lookAt({x:0,y:0,z:0})
 
@@ -95,45 +129,13 @@ const init = () => {
   renderer.domElement.classList.add('viz')
   document.body.appendChild( renderer.domElement)
 
-  controls = new THREE.TrackballControls( camera );
-  //controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
-  controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
-  controls.dampingFactor = 0.5
-  controls.autoRotate = true
-  controls.screenSpacePanning = false
-  controls.minDistance = 100
-  controls.maxDistance = 500
-  controls.maxPolarAngle = 0
+  controls = new THREE.OrbitControls( camera );
 
   window.addEventListener('resize', onWindowResize, false)
 
+  addLights()
+  addFloor()
 
-  scene.add( new THREE.AmbientLight( 0x505050 ) );
-
-  var light = new THREE.SpotLight( 0xffffff, 1.5 );
-  light.position.set( 0, 500, 2000 );
-  light.angle = Math.PI / 9;
-
-  light.castShadow = true;
-  light.shadow.camera.near = 1000;
-  light.shadow.camera.far = 4000;
-  light.shadow.mapSize.width = 1024;
-  light.shadow.mapSize.height = 1024;
-
-  scene.add( light );
-
-  var map = new THREE.TextureLoader().load( 'UV_Grid_Sm.jpg' );
-  map.wrapS = map.wrapT = THREE.RepeatWrapping;
-  map.anisotropy = 16;
-
-
-
-  var planeMaterial = new THREE.MeshPhongMaterial( { map: map, side: THREE.SingleSide } );
-  let plane = new THREE.Mesh( new THREE.PlaneBufferGeometry( 200, 200, 4, 4 ), planeMaterial );
-  plane.position.set( 0, 0, -10 );
-  scene.add( plane );
-
-  ignoredUUIDS.push(plane.uuid)
 
   fetchData().then(data => {
     data.nodes.forEach(n => {
@@ -146,7 +148,8 @@ const init = () => {
   const dragControls = new THREE.DragControls( draggableNodes, camera, renderer.domElement );
   dragControls.addEventListener( 'dragstart', function ( event ) {
     DRAGGING = true
-    controls.enabled = false; } );
+    controls.enabled = false } )
+
   dragControls.addEventListener('drag', function(event){
     const draggedNode = nodes.filter(n => n.uuid === event.object.uuid)[0]
     const draggedNodeId = draggedNode.properties.id
@@ -154,11 +157,11 @@ const init = () => {
       return e.source === draggedNodeId || e.target === draggedNodeId
     })
     updatedEdges.forEach(e => e.updateEdge())
-
   })
+
   dragControls.addEventListener( 'dragend', function ( event ) {
-      DRAGGING = false
-      controls.enabled = true;
+    DRAGGING = false
+    controls.enabled = true;
   } );
 
   raycaster = new THREE.Raycaster();
@@ -176,19 +179,19 @@ function onDocumentMouseMove( event ) {
 }
 
 const getObjectByUUID = (uuid) => {
-  console.log(uuid)
+  // console.log(uuid)
   let obj = nodes.filter(n => n.uuid === uuid)[0]
   if(obj === undefined){
     obj = edges.filter(e => e.uuid === uuid)[0]
     if(obj === undefined){
-      console.warn("UUID NOT FOUND. THIS SHOULD NOT HAPPEN")
+      // console.warn("UUID NOT FOUND. THIS SHOULD NOT HAPPEN")
       return
     }
     obj.objtype = "EDGE"
   } else {
     obj.objtype = "NODE"
   }
-  console.log(obj)
+  // console.log(obj)
   return obj
 }
 
@@ -221,6 +224,7 @@ const showHudFromObject = (obj) => {
   controls.enabled = false
   ALLOWCLICK = false
   if(obj.objtype === "NODE"){
+
     showHud(obj.properties, getConnectedNodes(obj.properties.id), showHudFromId)
     obj.markAsRead()
   } else {
@@ -278,7 +282,10 @@ const detectHoveredObjects = () => {
       iterator++
     }
 
-    if(hoveredObject && hoveredObject.unHighlight) hoveredObject.unHighlight()
+    if(hoveredObject && hoveredObject.unHighlight){
+      hoveredObject.unHighlight()
+      hideLabel()
+    }
     hoveredObject = getObjectByUUID(UUID)
     if(hoveredObject && hoveredObject.unHighlight) hoveredObject.highlight()
     if(hoveredObject !== undefined) showLabel(hoveredObject, realMousePosition)

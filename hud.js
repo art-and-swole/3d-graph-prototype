@@ -5,7 +5,7 @@ const closeHud = document.getElementById('close-hud')
 
 export const showHud = (node, _edges, callback) => {
   const edges = _edges.map(edge => {
-    return `<li class="edges" id="${edge.id}">${edge.id}</li>`
+    return `<li class="edges ${edge.state}" id="${edge.id}">${edge.title}</li>`
   }).join('')
 
   hudContent.innerHTML = `<h1>${node.name ? node.name : node.title}</h1>
