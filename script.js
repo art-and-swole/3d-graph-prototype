@@ -91,34 +91,28 @@ const addFloor = () => {
   plane.rotation.x = Math.PI / 2
   scene.add( plane );
   ignoredUUIDS.push(plane.uuid)
-
   window.planeadjust = plane
-
 }
 
 const addCamera = () => {
   const aspect = window.innerWidth / window.innerHeight;
   camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
-  camera.position.z = 200
-  camera.lookAt({x:0,y:0,z:0})
-  window.cameraadjust = camera
+  camera.position.set( 0, 200, 200 );
+  camera.lookAt(0,0,0)
+
 }
 
 const addLights = () => {
-  scene.add( new THREE.AmbientLight( 0x505050 ) );
-
-  var light = new THREE.SpotLight( 0xffffff, 1.5 );
-  light.position.set( 0, 500, 2000 );
-  light.angle = Math.PI / 9;
-
-  light.castShadow = false;
-  light.shadow.camera.near = 1000;
-  light.shadow.camera.far = 4000;
-  light.shadow.mapSize.width = 1024;
-  light.shadow.mapSize.height = 1024;
-
-  scene.add( light );
-
+  scene.add( new THREE.AmbientLight( 0x505050 ) )
+  var light = new THREE.SpotLight( 0xffffff, 1.5 )
+  light.position.set( 0, 500, 2000 )
+  light.angle = Math.PI / 9
+  light.castShadow = true
+  light.shadow.camera.near = 1000
+  light.shadow.camera.far = 4000
+  light.shadow.mapSize.width = 1024
+  light.shadow.mapSize.height = 1024
+  scene.add( light )
 }
 
 const init = () => {
@@ -134,7 +128,7 @@ const init = () => {
   renderer.domElement.classList.add('viz')
   document.body.appendChild( renderer.domElement)
 
-  controls = new THREE.OrbitControls( camera );
+  controls = new THREE.OrbitControls( camera )
 
   window.addEventListener('resize', onWindowResize, false)
 
@@ -150,7 +144,7 @@ const init = () => {
   })
 
 
-  const dragControls = new THREE.DragControls( draggableNodes, camera, renderer.domElement );
+  const dragControls = new THREE.DragControls( draggableNodes, camera, renderer.domElement )
   dragControls.addEventListener( 'dragstart', function ( event ) {
     DRAGGING = true
     controls.enabled = false } )
@@ -171,7 +165,7 @@ const init = () => {
 
   raycaster = new THREE.Raycaster();
 
-  document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+  document.addEventListener( 'mousemove', onDocumentMouseMove, false )
   document.addEventListener('click', onDocumentMouseClick, false)
 }
 
@@ -196,7 +190,6 @@ const getObjectByUUID = (uuid) => {
   } else {
     obj.objtype = "NODE"
   }
-  // console.log(obj)
   return obj
 }
 

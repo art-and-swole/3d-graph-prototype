@@ -10,7 +10,7 @@ export class Node {
 
     const spriteMap = new THREE.TextureLoader().load( 'sprite.png' );
     this.state = "NONE"
-    this.color = {r:0,g:0,b:0}
+    this.color = {r:1,g:1,b:1}
     this.properties = _node
     // @todo refactor position away, as we will use only mesh position
     this.position = getInitialNodePosition(_node)
