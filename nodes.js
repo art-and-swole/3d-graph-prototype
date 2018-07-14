@@ -1,3 +1,5 @@
+
+// If node has a fixed position place it. Otherwise find a good place for it.
 const getInitialNodePosition = (node) => {
   if(node.lat !== null && node.lng !== null && node.alt !== null){
     return {x: node.lat, y: node.alt, z: node.lng, draggable: false}
@@ -6,9 +8,9 @@ const getInitialNodePosition = (node) => {
 }
 
 export class Node {
-  constructor(_node){
+  constructor(_node, spriteURL = '/assets/sprite.png'){
 
-    const spriteMap = new THREE.TextureLoader().load( 'sprite.png' );
+    const spriteMap = new THREE.TextureLoader().load(spriteURL);
     this.state = "NONE"
     this.color = {r:1,g:1,b:1}
     this.properties = _node

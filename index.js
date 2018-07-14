@@ -79,9 +79,9 @@ const addNodeToScene = (_node) => {
   if(node.draggable) draggableNodes.push(node.mesh)
 }
 
-const addFloor = () => {
+const addFloor = (floorURL = '/assets/UV_Grid_Sm.jpg') => {
   // DRAW GROUND PLANE
-  var map = new THREE.TextureLoader().load( 'UV_Grid_Sm.jpg' );
+  var map = new THREE.TextureLoader().load( floorURL );
   map.wrapS = map.wrapT = THREE.RepeatWrapping;
   map.anisotropy = 16;
 

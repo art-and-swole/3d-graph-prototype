@@ -1,4 +1,6 @@
 
+// Converts a hash of objects into an array
+// where the key is the ID.
 const hashToArray = (hash) => {
   let arr = []
   Object.keys(hash).forEach(key => {
@@ -10,6 +12,7 @@ const hashToArray = (hash) => {
   return arr
 }
 
+// Finds the nodes in the array that have a fixed position
 const getNodesWithPosition = (nodes) => {
   let foundNodes = [], leftovers = []
   nodes.forEach(n => {
@@ -64,6 +67,8 @@ const getAllConnectedNodes = (baseSet, edges, nodes, level) => {
   return {foundNodes: foundNodes, leftovers: leftovers}
 }
 
+
+// @todo refactor this to step through the entire data set, not just four levels
 const orderData = (data) => {
   let nodes = data.nodes
   nodes = hashToArray(nodes)
@@ -75,8 +80,6 @@ const orderData = (data) => {
   let level4 = getAllConnectedNodes(level3.foundNodes, data.edges, level3.leftovers, 4 )
 
   data.nodes = nodesWithPosition.foundNodes.concat(level1.foundNodes,level2.foundNodes,level3.foundNodes,level4.foundNodes)
-
-  console.log(data)
   return data
 }
 

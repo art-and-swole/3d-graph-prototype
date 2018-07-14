@@ -1,4 +1,6 @@
-import { reenableControls } from './script.js'
+
+// @todo fix this call back, it's just bad style
+import { reenableControls } from './index.js'
 const hud = document.getElementById('hud')
 const hudContent = document.getElementById('hud-content')
 const closeHud = document.getElementById('close-hud')
@@ -26,6 +28,8 @@ export const showHud = (node, _edges, callback) => {
 
 const hideHud = () => {
   hud.classList.remove('visible')
+
+  // @todo fix this call back
   reenableControls()
 }
 
