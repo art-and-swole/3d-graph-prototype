@@ -1,3 +1,6 @@
+const nodeShapes = ['circle-icon.png','cone-icon.png','cross-icon.png','cube-icon.png','dashed-parallelogram-icon.png','hexagram-icon.png','paralellogram-icon.png']
+
+
 
 // If node has a fixed position place it. Otherwise find a good place for it.
 const getInitialNodePosition = (node) => {
@@ -8,7 +11,10 @@ const getInitialNodePosition = (node) => {
 }
 
 export class Node {
-  constructor(_node, spriteURL = '/assets/sprite.png'){
+  constructor(_node, spriteURL = "/assets/sprite.png"){
+
+    spriteURL = "/assets/" + nodeShapes[Math.floor(Math.random() * nodeShapes.length - 1)];
+
 
     const spriteMap = new THREE.TextureLoader().load(spriteURL);
     this.state = "NONE"
@@ -23,7 +29,8 @@ export class Node {
     // this.geometry = new THREE.BoxBufferGeometry(10, 10, 10)
     this.material = new THREE.SpriteMaterial({
       map: spriteMap,
-      color: '#fff',
+      color: 0xffff00,
+      transparent: true
     })
     this.sprite = new THREE.Sprite(this.material)
     this.sprite.scale.set(10, 10, 1)

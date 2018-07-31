@@ -217,7 +217,7 @@
     },
     {
       "source": "gear-check-may-2018",
-      "target": "graphgear-mechanical-pencils",
+      "target": "anchored-node",
       "type": "CONTAINS"
     },
     {
@@ -409,7 +409,7 @@
 
     {
       "source": "gear-check-may-2018",
-      "target": "graphgear-mechanical-pencils",
+      "target": "anchored-node",
       "type": "CONTAINS"
     },
 
@@ -615,18 +615,18 @@
       "summary": "The aesthethic that orbits around author William Gibson. He doesn't necessarily generate this aesthethic, but I don't know what else to call it.",
       "title": "gibsonian-aesthethic"
     },
-    "graphgear-mechanical-pencils": {
+    "anchored-node": {
       "alt": 0,
-      "content": "## GraphGear 500 0.7 mechanical pencil with 2b lead / 2mm lead holder with HB\nI used to use the Staedlters, but they moved from metal to plastic and messed up the weight distribution of the pencils-- another instance of how modern manufacturing techniques have made life worse. These have the right balance, and the 2b lead is close to writing with pen but eraseable. For drawings I start with the HB pencil lead holder, and finish up with either the mechanical pencil or water colors depending on what I am trying to do.",
+      "content": "Nodes that come with lattitude, longitute and altitude components are anchored and not draggable. This lets you put things on a map.",
       "labels": [
         "object",
         "tool"
       ],
-      "lat": 30,
-      "lng": 30,
+      "lat": 20,
+      "lng": 80,
       "src": null,
-      "summary": "GraphGear 500 0.7 mechanical pencil with 2b lead",
-      "title": "graphgear-mechanical-pencils"
+      "summary": "This is an anchored node",
+      "title": "anchored-node"
     },
     "handbook-sketchbooks": {
       "alt": 0,
@@ -634,20 +634,20 @@
       "labels": [
         ""
       ],
-      "lat": 30,
-      "lng": 50,
+      "lat": 80,
+      "lng": 40,
       "src": null,
       "summary": "",
       "title": "handbook-sketchbooks"
     },
     "luxuries-i-can-carry": {
-      "alt": 0,
+      "alt": 40,
       "content": "I have the general philosophy of only owning luxuries I can carry. I do own a few expensive things, but generally I carry these things with me at all times.",
       "labels": [
         ""
       ],
-      "lat": 30,
-      "lng": 40,
+      "lat": 50,
+      "lng": 50,
       "src": null,
       "summary": "",
       "title": "luxuries-i-can-carry"

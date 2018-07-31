@@ -1,4 +1,3 @@
-
 // Converts a hash of objects into an array
 // where the key is the ID.
 const hashToArray = (hash) => {
@@ -70,15 +69,18 @@ const getAllConnectedNodes = (baseSet, edges, nodes, level) => {
 
 // @todo refactor this to step through the entire data set, not just four levels
 const orderData = (data) => {
-  let nodes = data.nodes
-  nodes = hashToArray(nodes)
-  let nodesWithPosition = getNodesWithPosition(nodes)
+
+  // @todo this was a bad idea, need to refactor so only the edges
+  // are in an array, with nodes as a hash
+  data.nodes = hashToArray(data.nodes)
+  let nodesWithPosition = getNodesWithPosition(data.nodes)
+
+
 
   let level1 = getAllConnectedNodes(nodesWithPosition.foundNodes, data.edges, nodesWithPosition.leftovers, 1)
   let level2 = getAllConnectedNodes(level1.foundNodes, data.edges,level1.leftovers, 2 )
   let level3 = getAllConnectedNodes(level2.foundNodes, data.edges,level2.leftovers, 3 )
   let level4 = getAllConnectedNodes(level3.foundNodes, data.edges, level3.leftovers, 4 )
-
   data.nodes = nodesWithPosition.foundNodes.concat(level1.foundNodes,level2.foundNodes,level3.foundNodes,level4.foundNodes)
   return data
 }

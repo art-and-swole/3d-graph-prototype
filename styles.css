@@ -27,10 +27,10 @@ body {
 .hud {
   position: absolute;
   z-index: 10000;
-  left: -120vw;
+  left: -101vw;
   top: 0px;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   transition: left 0.2s ease-out;
   background-color: rgba(255,255,255,0.9);
 }

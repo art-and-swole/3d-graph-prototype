@@ -1,5 +1,6 @@
 import {fetchData} from './data.js'
 import {Node} from './nodes.js'
+import {Edge} from './edges.js'
 import {showHud} from './hud.js'
 import {showLabel, hideLabel} from './label.js'
 
@@ -22,98 +23,6 @@ let ignoredUUIDS = []
 let nodes = []
 let edges = []
 let frustumSize = 300;
-
-
-
-class Edge {
-  constructor(_edge){
-    this.source = _edge.source
-    this.target = _edge.target
-    this.type = _edge.type
-    const sourcePosition = nodes.filter(n => n.properties.id === this.source)[0].getSourceLinkPosition()
-    const targetPosition = nodes.filter(n => n.properties.id === this.target)[0].getTargetLinkPosition()
-    this.geometry = new THREE.BufferGeometry().setFromPoints([sourcePosition, targetPosition])
-    this.material = new THREE.LineBasicMaterial({})
-
-    this.material.color = {r:0.5, g:0.5, b:0.5}
-
-    const line = new THREE.Line(this.geometry, this.material)
-
-    this.mesh = line
-
-    this.uuid = this.mesh.uuid
-  }
-
-  highlight(){
-    this.material.color = {r:1, g:0, b:1}
-  }
-
-  unHighlight(){
-    this.material.color = {r:0.5, g:0.5, b:0.5}
-  }
-
-  click(){
-
-  }
-
-  resetState(){
-
-  }
-
-  updateEdge (){
-    const sourcePosition = nodes.filter(n => n.properties.id === this.source)[0].getSourceLinkPosition()
-    const targetPosition = nodes.filter(n => n.properties.id === this.target)[0].getTargetLinkPosition()
-    this.geometry.setFromPoints([sourcePosition, targetPosition])
-  }
-}
-
-const addEdgeToScene = (edge) => {
-  edges.push(new Edge(edge))
-  scene.add(edges[edges.length - 1].mesh)
-}
-
-const addNodeToScene = (_node) => {
-  const node = new Node(_node)
-  nodes.push(node)
-  scene.add(node.mesh)
-  if(node.draggable) draggableNodes.push(node.mesh)
-}
-
-const addFloor = (floorURL = '/assets/UV_Grid_Sm.jpg') => {
-  // DRAW GROUND PLANE
-  var map = new THREE.TextureLoader().load( floorURL );
-  map.wrapS = map.wrapT = THREE.RepeatWrapping;
-  map.anisotropy = 16;
-
-  var planeMaterial = new THREE.MeshPhongMaterial( { map: map, side: THREE.DoubleSide } );
-  let plane = new THREE.Mesh( new THREE.PlaneBufferGeometry( 200, 200, 4, 4 ), planeMaterial );
-  plane.position.set( 0, -10, 0 );
-  plane.rotation.x = Math.PI / 2
-  scene.add( plane );
-  ignoredUUIDS.push(plane.uuid)
-  window.planeadjust = plane
-}
-
-const addCamera = () => {
-  const aspect = window.innerWidth / window.innerHeight;
-  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
-  camera.position.set( 0, 200, 200 );
-  camera.lookAt(0,0,0)
-
-}
-
-const addLights = () => {
-  scene.add( new THREE.AmbientLight( 0x505050 ) )
-  var light = new THREE.SpotLight( 0xffffff, 1.5 )
-  light.position.set( 0, 500, 2000 )
-  light.angle = Math.PI / 9
-  light.castShadow = true
-  light.shadow.camera.near = 1000
-  light.shadow.camera.far = 4000
-  light.shadow.mapSize.width = 1024
-  light.shadow.mapSize.height = 1024
-  scene.add( light )
-}
 
 const init = () => {
 
@@ -169,6 +78,56 @@ const init = () => {
   document.addEventListener('click', onDocumentMouseClick, false)
 }
 
+const addEdgeToScene = (edge) => {
+  edges.push(new Edge(edge, nodes))
+  scene.add(edges[edges.length - 1].mesh)
+}
+
+const addNodeToScene = (_node) => {
+  const node = new Node(_node)
+  nodes.push(node)
+  scene.add(node.mesh)
+  if(node.draggable) draggableNodes.push(node.mesh)
+}
+
+const addFloor = (floorURL = '/assets/grid.png') => {
+  // DRAW GROUND PLANE
+  var map = new THREE.TextureLoader().load( floorURL );
+  map.wrapS = map.wrapT = THREE.RepeatWrapping;
+  map.anisotropy = 16;
+
+  var planeMaterial = new THREE.MeshPhongMaterial( { map: map, side: THREE.DoubleSide, color: 0xfffff00, transparent: true} );
+  let plane = new THREE.Mesh( new THREE.PlaneBufferGeometry( 200, 200, 4, 4 ), planeMaterial );
+  plane.position.set( 0, -10, 0 );
+  plane.rotation.x = Math.PI / 2
+  scene.add( plane );
+  ignoredUUIDS.push(plane.uuid)
+  window.planeadjust = plane
+}
+
+const addCamera = () => {
+  const aspect = window.innerWidth / window.innerHeight;
+  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
+  camera.position.set( 0, 200, 200 );
+  camera.lookAt(0,0,0)
+
+}
+
+const addLights = () => {
+  scene.add( new THREE.AmbientLight( 0x505050 ) )
+  var light = new THREE.SpotLight( 0xffffff, 1.5 )
+  light.position.set( 0, 500, 2000 )
+  light.angle = Math.PI / 9
+  light.castShadow = true
+  light.shadow.camera.near = 1000
+  light.shadow.camera.far = 4000
+  light.shadow.mapSize.width = 1024
+  light.shadow.mapSize.height = 1024
+  scene.add( light )
+}
+
+
+
 function onDocumentMouseMove( event ) {
   event.preventDefault()
   realMousePosition.x = event.clientX
@@ -222,7 +181,6 @@ const showHudFromObject = (obj) => {
   controls.enabled = false
   ALLOWCLICK = false
   if(obj.objtype === "NODE"){
-
     showHud(obj.properties, getConnectedNodes(obj.properties.id), showHudFromId)
     obj.markAsRead()
   } else {
