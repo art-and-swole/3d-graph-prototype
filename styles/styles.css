@@ -27,7 +27,7 @@ body {
 .hud {
   position: absolute;
   z-index: 10000;
-  left: -101vw;
+  left: -200vw;
   top: 0px;
   height: 100%;
   width: 100vw;

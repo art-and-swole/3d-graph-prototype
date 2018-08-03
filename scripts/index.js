@@ -191,10 +191,6 @@ const showHudFromObject = (obj) => {
   }
 }
 
-export const reenableControls = () => {
-  controls.enabled = true
-  ALLOWCLICK = true
-}
 
 function onDocumentMouseClick (event ){
   if(DRAGGING || !ALLOWCLICK) return
@@ -207,7 +203,7 @@ function onDocumentMouseClick (event ){
 
   if(intersects.length > 0){
     selectedObject = getObjectByUUID(intersects[0].object.uuid)
-    // showHudFromObject(selectedObject)
+    showHudFromObject(selectedObject)
 
   }
 
@@ -246,6 +242,15 @@ const detectHoveredObjects = () => {
     if(hoveredObject !== undefined) showLabel(hoveredObject, realMousePosition)
   }
 }
+
+
+export const reenableControls = () => {
+  setTimeout(function(){
+    controls.enabled = true
+    ALLOWCLICK = true
+  },500);
+}
+
 
 const render = () => {
   detectHoveredObjects()
