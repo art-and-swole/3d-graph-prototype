@@ -1,8 +1,11 @@
 import {fetchData} from './data.js'
-import {Node} from './nodes.js'
-import {Edge} from './edges.js'
 import {showHud} from './hud.js'
 import {showLabel, hideLabel} from './label.js'
+
+let nodes;
+let edges;
+let nodesUUIDLookupTable;
+let edgesUUIDLookupTable;
 
 let camera
 let scene
@@ -20,8 +23,6 @@ let ALLOWCLICK = true
 
 let draggableNodes = []
 let ignoredUUIDS = []
-let nodes = []
-let edges = []
 let frustumSize = 300;
 
 const init = () => {
@@ -45,11 +46,15 @@ const init = () => {
   addFloor()
 
 
-  fetchData().then(data => {
-    data.nodes.forEach(n => {
-      addNodeToScene(n)
+  fetchData().then((data) => {
+    nodes = data.nodes;
+    edges = data.edges;
+    nodesUUIDLookupTable = data.nodesUUIDLookupTable;
+    edgesUUIDLookupTable = data.edgesUUIDLookupTable;
+    Object.keys(nodes).forEach(key => {
+      addNodeToScene(nodes[key])
     })
-    data.edges.forEach(e => addEdgeToScene(e))
+    edges.forEach(e => addEdgeToScene(e));
   })
 
 
@@ -59,12 +64,14 @@ const init = () => {
     controls.enabled = false } )
 
   dragControls.addEventListener('drag', function(event){
-    const draggedNode = nodes.filter(n => n.uuid === event.object.uuid)[0]
-    const draggedNodeId = draggedNode.properties.id
-    const updatedEdges = edges.filter(e => {
-      return e.source === draggedNodeId || e.target === draggedNodeId
-    })
-    updatedEdges.forEach(e => e.updateEdge())
+
+    const draggedNode = nodes[event.object.uuid];
+    if(draggedNode !== undefined){
+      const updatedEdges = edges.filter(e => {
+        return e.source === draggedNode.uuid || e.target === draggedNode.uuid
+      })
+      updatedEdges.forEach(e => e.updateEdge())
+    }
   })
 
   dragControls.addEventListener( 'dragend', function ( event ) {
@@ -79,13 +86,10 @@ const init = () => {
 }
 
 const addEdgeToScene = (edge) => {
-  edges.push(new Edge(edge, nodes))
-  scene.add(edges[edges.length - 1].mesh)
+  scene.add(edge.mesh)
 }
 
-const addNodeToScene = (_node) => {
-  const node = new Node(_node)
-  nodes.push(node)
+const addNodeToScene = (node) => {
   scene.add(node.mesh)
   if(node.draggable) draggableNodes.push(node.mesh)
 }
@@ -138,17 +142,17 @@ function onDocumentMouseMove( event ) {
 
 const getObjectByUUID = (uuid) => {
   // console.log(uuid)
-  let obj = nodes.filter(n => n.uuid === uuid)[0]
-  if(obj === undefined){
+  console.log(uuid, nodes[uuid]);
+  let obj = nodes[uuid];
+
+  if(edges && edges.length > 0 && obj === undefined){
     obj = edges.filter(e => e.uuid === uuid)[0]
     if(obj === undefined){
-      // console.warn("UUID NOT FOUND. THIS SHOULD NOT HAPPEN")
+      console.warn("UUID NOT FOUND. THIS SHOULD NOT HAPPEN")
       return
     }
-    obj.objtype = "EDGE"
-  } else {
-    obj.objtype = "NODE"
   }
+
   return obj
 }
 
@@ -158,12 +162,12 @@ const getConnectedNodes = (id) => {
   let connectedNodes = []
   sourceEdges.forEach(s => {
     if(connectedNodes.filter(cn => cn.id === s.target).length > 0) return
-    connectedNodes.push(nodes.filter(n => n.properties.id === s.target)[0].properties)
+    connectedNodes.push(nodes[s.target].properties);
   })
   targetEdges.forEach(t => {
     if(connectedNodes.filter(cn => cn.id === t.source).length > 0) return
 
-    connectedNodes.push(nodes.filter(n => n.properties.id === t.source)[0].properties)
+    connectedNodes.push(nodes[t.source].properties)
   })
   return connectedNodes
 }
@@ -171,9 +175,8 @@ const getConnectedNodes = (id) => {
 let selectedObject = {}
 
 const showHudFromId = (id) => {
-  let obj = nodes.filter(n => n.properties.id === id)[0]
+  let obj = nodes[id]
   obj.objtype = "NODE"
-  console.log("SHOW HUD FROM ID:", id, obj)
   showHudFromObject(obj)
 }
 
@@ -204,11 +207,7 @@ function onDocumentMouseClick (event ){
 
   if(intersects.length > 0){
     selectedObject = getObjectByUUID(intersects[0].object.uuid)
-    if(selectedObject.objtype === "NODE"){
-      showHudFromObject(selectedObject)
-    } else {
-      console.log("SELECTED EDGE:", selectedObject)
-    }
+    // showHudFromObject(selectedObject)
 
   }
 
