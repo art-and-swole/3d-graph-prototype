@@ -6,6 +6,13 @@ const hudContent = document.getElementById('hud-content')
 const closeHud = document.getElementById('close-hud')
 
 export const showHud = (node, _edges, callback) => {
+
+  //For display purposes I'm axing the content and summary, since
+  //the data set I have is inclomplete rough drafts
+
+  node.summary = "<p>Summary Here</p>"
+  node.content = "<p>For demo purposes I am not displaying content.</p>"
+
   const edges = _edges.map(edge => {
     return `<li class="edges ${edge.state}" id="${edge.id}">${edge.title}</li>`
   }).join('')

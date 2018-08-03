@@ -85,8 +85,8 @@ const orderData = (data) => {
   return data
 }
 
-export const fetchData = () => {
-  return fetch('data.json').then(res => {
+export const fetchData = (path = 'assets/data.json') => {
+  return fetch(path).then(res => {
     return res.json()
   }).then(r => {
     return orderData(r)
